@@ -174,3 +174,14 @@ body {
     background-position: center, center, center bottom !important;
   }
 }
+
+/* SITEFLY: плавное смешивание изображения Hero с фоном страницы */
+@media (min-width: 768px) {
+  .hero-visual img {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.12) 8%, #000 26%, #000 94%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.12) 8%, #000 26%, #000 94%, transparent 100%);
+  }
+}
+@media (max-width: 767px) {
+  .hero-visual img { -webkit-mask-image: none; mask-image: none; }
+}
