@@ -36,3 +36,21 @@
     right: 0;
   }
 }
+
+
+/* SITEFLY v2: fade the complete hero artwork into the exact hero base color.
+   This masks the artwork layer itself, preventing a hard vertical cut at the container edge. */
+@media (min-width: 1200px) {
+  .hero { background-color: #071427 !important; }
+  .hero::before {
+    -webkit-mask-image: linear-gradient(to right, #000 0%, #000 calc(100% - 150px), transparent 100%);
+    mask-image: linear-gradient(to right, #000 0%, #000 calc(100% - 150px), transparent 100%);
+  }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .hero { background-color: #071427 !important; }
+  .hero::before {
+    -webkit-mask-image: linear-gradient(to right, #000 0%, #000 calc(100% - 100px), transparent 100%);
+    mask-image: linear-gradient(to right, #000 0%, #000 calc(100% - 100px), transparent 100%);
+  }
+}
