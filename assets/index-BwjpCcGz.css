@@ -175,13 +175,24 @@ body {
   }
 }
 
-/* SITEFLY: плавное смешивание изображения Hero с фоном страницы */
+/* SITEFLY: финальное бесшовное смешивание Hero с фоном страницы */
 @media (min-width: 768px) {
+  .hero-visual {
+    background: transparent !important;
+    overflow: visible;
+  }
   .hero-visual img {
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.12) 8%, #000 26%, #000 94%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.12) 8%, #000 26%, #000 94%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 88% 105% at 63% 50%, #000 55%, rgba(0,0,0,.96) 66%, rgba(0,0,0,.72) 76%, transparent 100%) !important;
+    mask-image: radial-gradient(ellipse 88% 105% at 63% 50%, #000 55%, rgba(0,0,0,.96) 66%, rgba(0,0,0,.72) 76%, transparent 100%) !important;
+    -webkit-mask-repeat: no-repeat !important;
+    mask-repeat: no-repeat !important;
+    -webkit-mask-size: 100% 100% !important;
+    mask-size: 100% 100% !important;
   }
 }
 @media (max-width: 767px) {
-  .hero-visual img { -webkit-mask-image: none; mask-image: none; }
+  .hero-visual img {
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+  }
 }
